@@ -1,1 +1,83 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
 
+header.hero {
+  background: #ccd4d8;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+header.hero h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+section a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ccc;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.concept {
+  display: flex;
+  flex-wrap: wrap;
+  background: #eef1f3;
+}
+
+.concept .text,
+.concept .image {
+  flex: 1;
+  padding: 20px;
+}
+
+.concept img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.works .gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.works .gallery img {
+  width: calc(33.333% - 10px);
+  border-radius: 10px;
+}
+
+.recommend .content,
+.products .content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.recommend img,
+.products img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
