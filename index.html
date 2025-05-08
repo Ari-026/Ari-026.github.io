@@ -2,54 +2,57 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>私のポートフォリオ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>私のポートフォリオ</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">自己紹介</a></li>
-        <li><a href="#works">制作物</a></li>
-        <li><a href="#contact">連絡先</a></li>
-      </ul>
-    </nav>
+  <header class="hero">
+    <h1>My Portfolio</h1>
+    <p>心を動かすデザインをあなたに</p>
   </header>
 
-  <main>
-    <section id="about">
-      <img src="images/profile.jpg" alt="プロフィール画像" class="profile-img">
-      <h2>自己紹介</h2>
-      <p>こんにちは、三浦です。Webデザインを中心に勉強したいです。</p>
-    </section>
+  <section class="concept">
+    <div class="text">
+      <h2>Concept</h2>
+      <p>自分らしいデザインを通じて、見る人の心に残るものを。</p>
+      <a href="#">View More</a>
+    </div>
+    <div class="image">
+      <img src="img/concept.jpg" alt="Concept Image">
+    </div>
+  </section>
 
-    <section id="works">
-      <h2>制作物</h2>
-      <div class="work-item">
-        <h3>作品タイトル1</h3>
-        <p>簡単な説明文。使用技術なども記載。</p>
-      </div>
-      <div class="work-item">
-        <h3>作品タイトル2</h3>
-        <p>別の制作物についての説明。</p>
-      </div>
-    </section>
+  <section class="works">
+    <h2>Works</h2>
+    <div class="gallery">
+      <img src="img/work1.jpg" alt="Work 1">
+      <img src="img/work2.jpg" alt="Work 2">
+      <img src="img/work3.jpg" alt="Work 3">
+    </div>
+    <a href="#">View More</a>
+  </section>
 
-    <section id="contact">
-      <h2>連絡先</h2>
-      <p>ご連絡は以下よりお願いいたします。</p>
-      <ul>
-        <li>Email: your.email@example.com</li>
-        <li>GitHub: <a href="https://github.com/youraccount" target="_blank">youraccount</a></li>
-      </ul>
-    </section>
-  </main>
+  <section class="recommend">
+    <h2>Recommend</h2>
+    <div class="content">
+      <img src="img/recommend.jpg" alt="Recommend">
+      <p>特に見てほしいこだわりの作品をご紹介。</p>
+    </div>
+    <a href="#">View More</a>
+  </section>
+
+  <section class="products">
+    <h2>Products / Skills</h2>
+    <div class="content">
+      <img src="img/products.jpg" alt="Product">
+      <p>使用ツールやスキルをご紹介します。</p>
+    </div>
+    <a href="#">View More</a>
+  </section>
 
   <footer>
-    <p>&copy; 2025 あなたの名前</p>
+    <p>&copy; 2025 My Portfolio</p>
   </footer>
 </body>
 </html>
-
