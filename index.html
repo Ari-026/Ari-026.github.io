@@ -1,609 +1,305 @@
-<!<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>卒業制作プレゼンテーション：システム開発プロジェクト</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
-
-    <link rel="stylesheet" href="custom.css">
-
-    <style>
-
-        /* 三浦花音 */
-
-        .reveal h1, .reveal h2, .reveal h3 {
-
-            color: #333;
-
-        }
-
-        .reveal p {
-
-            margin-bottom: 10px;
-
-        }
-
-        .reveal ul {
-
-            list-style-type: disc;
-
-            margin-left: 40px;
-
-            text-align: left;
-
-            font-size: 0.95em;
-
-        }
-
-        .reveal li {
-
-            margin-bottom: 5px;
-
-        }
-
-        .reveal .features-grid, .reveal .tech-stack-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-            gap: 15px;
-
-            margin-top: 20px;
-
-            text-align: center;
-
-        }
-
-        .reveal .features-grid div, .reveal .tech-stack-grid div {
-
-            background-color: #f9f9f9;
-
-            padding: 15px;
-
-            border-radius: 8px;
-
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-
-            font-size: 0.85em;
-
-            text-align: left;
-
-        }
-
-        .reveal .features-grid h4, .reveal .tech-stack-grid h4 {
-
-            color: #007bff; /* 青系 */
-
-            margin-bottom: 5px;
-
-            font-size: 1.1em;
-
-            text-align: center;
-
-        }
-
-        .reveal .tech-stack-grid div {
-
-            background-color: #e9f7ff; /* 少し明るい青系 */
-
-            font-size: 0.8em;
-
-        }
-
-        .reveal .tech-stack-grid h4 {
-
-            color: #28a745; /* 緑系 */
-
-        }
-
-        .reveal section > p:last-of-type { /* 最後の段落の余白を調整 */
-
-            margin-bottom: 0;
-
-        }
-
-        .reveal img.project-icon {
-
-            max-width: 100px; /* プロジェクトアイコンのサイズ */
-
-            height: auto;
-
-            margin-bottom: 15px;
-
-        }
-
-        p[align="right"] {
-
-            text-align: right;
-
-            font-size: 0.8em;
-
-            margin-top: 50px;
-
-        }
-
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卒業制作プレゼンテーション：システム開発プロジェクト</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <link rel="stylesheet" href="custom.css">
+    <style>
+        /* ここにプレゼンテーション用の追加CSSを記述できます */
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: #333;
+        }
+        .reveal p {
+            margin-bottom: 10px;
+        }
+        .reveal ul {
+            list-style-type: disc;
+            margin-left: 40px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+        .reveal li {
+            margin-bottom: 5px;
+        }
+        .reveal .features-grid, .reveal .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .reveal .features-grid div, .reveal .tech-stack-grid div {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 0.85em;
+            text-align: left;
+        }
+        .reveal .features-grid h4, .reveal .tech-stack-grid h4 {
+            color: #007bff; /* 青系 */
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .reveal .tech-stack-grid div {
+            background-color: #e9f7ff; /* 少し明るい青系 */
+            font-size: 0.8em;
+        }
+        .reveal .tech-stack-grid h4 {
+            color: #28a745; /* 緑系 */
+        }
+        .reveal section > p:last-of-type { /* 最後の段落の余白を調整 */
+            margin-bottom: 0;
+        }
+        .reveal img.project-icon {
+            max-width: 100px; /* プロジェクトアイコンのサイズ */
+            height: auto;
+            margin-bottom: 15px;
+        }
+        p[align="right"] {
+            text-align: right;
+            font-size: 0.8em;
+            margin-top: 50px;
+        }
+    </style>
 </head>
-
 <body>
-
-    <div class="reveal">
-
-        <div class="slides">
-
-            <section>
-
-                <h1>卒業制作：システム開発プロジェクト</h1>
-
-                <h2>概要と技術選定</h2>
-
-                <p align="right">（あなたの名前/チーム名）</p>
-
-            </section>
-
-            
-
-            <section>
-
-                <h2>プロジェクト概要</h2>
-
-                <p>今回の卒業制作では、現代社会の多様なニーズに応えるため、以下の3つの異なるシステム開発に挑戦します。</p>
-
-                <ul>
-
-                    <li>バイト先向け**在庫管理システム**</li>
-
-                    <li>個人向け**予定管理アプリ**</li>
-
-                    <li>**インフラ監視・管理システム**</li>
-
-                </ul>
-
-                <p>各プロジェクトで異なる技術スタックを経験し、実践的なスキルを習得します。</p>
-
-            </section>
-
-
-
-            <section>
-
-                <section>
-
-                    <h2>1. バイト先向け在庫管理システム</h2>
-
-                    <img src="https://via.placeholder.com/100x100?text=Stock" alt="在庫アイコン" class="project-icon">
-
-                    <p>手作業に頼りがちな在庫管理の非効率性を解消し、店舗運営を最適化します。</p>
-
-                </section>
-
-                <section>
-
-                    <h3>主要機能</h3>
-
-                    <div class="features-grid">
-
-                        <div>
-
-                            <h4>商品・在庫登録</h4>
-
-                            <p>商品情報と現在の在庫数を一元管理します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>入出庫管理</h4>
-
-                            <p>リアルタイムでの在庫変動を記録・反映します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>発注点アラート</h4>
-
-                            <p>在庫不足を自動で通知し、欠品を防止します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>発注リスト自動生成</h4>
-
-                            <p>効率的な発注業務を支援します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>在庫レポート</h4>
-
-                            <p>在庫状況や回転率を可視化します。</p>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section>
-
-                    <h3>技術要素</h3>
-
-                    <div class="tech-stack-grid">
-
-                        <div>
-
-                            <h4>バックエンド</h4>
-
-                            <p>Python (Django / Flask)</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>データベース</h4>
-
-                            <p>PostgreSQL / MySQL</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>フロントエンド</h4>
-
-                            <p>HTML, CSS, JavaScript (React / Vue.js)</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>インフラ</h4>
-
-                            <p>AWS / GCP (EC2, RDSなど)</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>開発ツール</h4>
-
-                            <p>Git / GitHub, Docker</p>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </section>
-
-            
-
-            <section>
-
-                <section>
-
-                    <h2>2. 個人向け予定管理アプリ</h2>
-
-                    <img src="https://via.placeholder.com/100x100?text=Calendar" alt="カレンダーアイコン" class="project-icon">
-
-                    <p>ユーザーの日常生活や業務をサポートし、効率的な時間管理とタスク遂行を可能にします。</p>
-
-                </section>
-
-                <section>
-
-                    <h3>主要機能</h3>
-
-                    <div class="features-grid">
-
-                        <div>
-
-                            <h4>スケジュール管理</h4>
-
-                            <p>イベント登録、カレンダー表示で予定を視覚化します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>タスク管理</h4>
-
-                            <p>To-Doリスト、進捗管理、リマインダーを設定します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>通知機能</h4>
-
-                            <p>予定やタスクのリマインドを自動通知します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>共有機能</h4>
-
-                            <p>他のユーザーと予定やタスクを共有できます（任意）。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>クロスプラットフォーム</h4>
-
-                            <p>ウェブ、モバイル（iOS/Android）で利用可能です。</p>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section>
-
-                    <h3>技術要素</h3>
-
-                    <div class="tech-stack-grid">
-
-                        <div>
-
-                            <h4>バックエンド</h4>
-
-                            <p>Node.js (Express) / Python (FastAPI)</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>データベース</h4>
-
-                            <p>MongoDB / Firestore</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>フロントエンド (Web)</h4>
-
-                            <p>HTML, CSS, JavaScript (React / Next.js)</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>フロントエンド (Mobile)</h4>
-
-                            <p>React Native / Flutter</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>認証</h4>
-
-                            <p>Firebase Auth / Auth0</p>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </section>
-
-            
-
-            <section>
-
-                <section>
-
-                    <h2>3. インフラ監視・管理システム</h2>
-
-                    <img src="https://via.placeholder.com/100x100?text=Monitor" alt="監視アイコン" class="project-icon">
-
-                    <p>ITインフラの安定稼働を支え、問題の早期発見と対応を自動化・効率化します。</p>
-
-                </section>
-
-                <section>
-
-                    <h3>主要機能</h3>
-
-                    <div class="features-grid">
-
-                        <div>
-
-                            <h4>サーバー稼働監視</h4>
-
-                            <p>CPU、メモリ、ディスク使用率などをリアルタイムで監視します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>ログ収集・分析</h4>
-
-                            <p>サーバーやアプリログを一元管理し、異常を検知します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>アラート通知</h4>
-
-                            <p>異常発生時、メールやSlackへ自動通知します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>リソース管理</h4>
-
-                            <p>仮想マシンやコンテナのリソース利用を可視化します。</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>デプロイ自動化</h4>
-
-                            <p>アプリケーションのデプロイプロセスを自動化します。</p>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section>
-
-                    <h3>技術要素</h3>
-
-                    <div class="tech-stack-grid">
-
-                        <div>
-
-                            <h4>言語</h4>
-
-                            <p>Python / Go</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>監視ツール</h4>
-
-                            <p>Prometheus, Grafana, Zabbix</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>ログ管理</h4>
-
-                            <p>ELK Stack (Elasticsearch, Logstash, Kibana)</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>コンテナ技術</h4>
-
-                            <p>Docker, Kubernetes</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>構成管理</h4>
-
-                            <p>Ansible / Terraform</p>
-
-                        </div>
-
-                        <div>
-
-                            <h4>クラウド</h4>
-
-                            <p>AWS / GCP / Azure (Monitoring, Logging)</p>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </section>
-
-
-
-            <section>
-
-                <h2>まとめ</h2>
-
-                <p>これらのプロジェクトを通じて、以下の目標を達成します。</p>
-
-                <ul>
-
-                    <li>**実践的な開発スキル**: バックエンド、フロントエンド、インフラまで一貫した開発経験</li>
-
-                    <li>**課題解決能力**: 現実世界の課題に対するシステムソリューションの提案と実装</li>
-
-                    <li>**最新技術の習得**: 各分野で広く使われる技術やフレームワークの深い理解</li>
-
-                    <li>**チーム開発の経験**: Git/GitHubを活用した協調開発（チーム制作の場合）</li>
-
-                </ul>
-
-                <p>これらのシステム開発を卒業制作とします！</p>
-
-            </section>
-
-
-
-            <section>
-
-                <h1>質疑応答</h1>
-
-                <p>ご清聴いただきありがとうございました。</p>
-
-                <p>ご質問がございましたら、お気軽にお尋ねください。</p>
-
-            </section>
-
-        </div>
-
-    </div>
-
-    
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
-
-    <script>
-
-        Reveal.initialize({
-
-            hash: true,
-
-            transition: 'slide',
-
-            transitionSpeed: 'slow',
-
-            controls: true,
-
-            progress: true,
-
-            center: true,
-
-            // 垂直方向のスライドも有効にする設定
-
-            // これはネストされたセクション（<section><section>...</section></section>）で利用されます
-
-            // この場合、各プロジェクトの詳細スライドが垂直方向、プロジェクト自体が水平方向になります
-
-            // default: true
-
-            // verticalEnabled: true, 
-
-        });
-
-    </script>
-
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>卒業制作：システム開発プロジェクト</h1>
+                <h2>概要と技術選定</h2>
+                <p align="right">（あなたの名前/チーム名）</p>
+            </section>
+            
+            <section>
+                <h2>プロジェクト概要</h2>
+                <p>今回の卒業制作では、現代社会の多様なニーズに応えるため、以下の3つの異なるシステム開発に挑戦します。</p>
+                <ul>
+                    <li>バイト先向け**在庫管理システム**</li>
+                    <li>個人向け**予定管理アプリ**</li>
+                    <li>**インフラ監視・管理システム**</li>
+                </ul>
+                <p>各プロジェクトで異なる技術スタックを経験し、実践的なスキルを習得します。</p>
+            </section>
+
+            <section>
+                <section>
+                    <h2>1. バイト先向け在庫管理システム</h2>
+                    <img src="https://via.placeholder.com/100x100?text=Stock" alt="在庫アイコン" class="project-icon">
+                    <p>手作業に頼りがちな在庫管理の非効率性を解消し、店舗運営を最適化します。</p>
+                </section>
+                <section>
+                    <h3>主要機能</h3>
+                    <div class="features-grid">
+                        <div>
+                            <h4>商品・在庫登録</h4>
+                            <p>商品情報と現在の在庫数を一元管理します。</p>
+                        </div>
+                        <div>
+                            <h4>入出庫管理</h4>
+                            <p>リアルタイムでの在庫変動を記録・反映します。</p>
+                        </div>
+                        <div>
+                            <h4>発注点アラート</h4>
+                            <p>在庫不足を自動で通知し、欠品を防止します。</p>
+                        </div>
+                        <div>
+                            <h4>発注リスト自動生成</h4>
+                            <p>効率的な発注業務を支援します。</p>
+                        </div>
+                        <div>
+                            <h4>在庫レポート</h4>
+                            <p>在庫状況や回転率を可視化します。</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>技術要素</h3>
+                    <div class="tech-stack-grid">
+                        <div>
+                            <h4>バックエンド</h4>
+                            <p>Python (Django / Flask)</p>
+                        </div>
+                        <div>
+                            <h4>データベース</h4>
+                            <p>PostgreSQL / MySQL</p>
+                        </div>
+                        <div>
+                            <h4>フロントエンド</h4>
+                            <p>HTML, CSS, JavaScript (React / Vue.js)</p>
+                        </div>
+                        <div>
+                            <h4>インフラ</h4>
+                            <p>AWS / GCP (EC2, RDSなど)</p>
+                        </div>
+                        <div>
+                            <h4>開発ツール</h4>
+                            <p>Git / GitHub, Docker</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h2>2. 個人向け予定管理アプリ</h2>
+                    <img src="https://via.placeholder.com/100x100?text=Calendar" alt="カレンダーアイコン" class="project-icon">
+                    <p>ユーザーの日常生活や業務をサポートし、効率的な時間管理とタスク遂行を可能にします。</p>
+                </section>
+                <section>
+                    <h3>主要機能</h3>
+                    <div class="features-grid">
+                        <div>
+                            <h4>スケジュール管理</h4>
+                            <p>イベント登録、カレンダー表示で予定を視覚化します。</p>
+                        </div>
+                        <div>
+                            <h4>タスク管理</h4>
+                            <p>To-Doリスト、進捗管理、リマインダーを設定します。</p>
+                        </div>
+                        <div>
+                            <h4>通知機能</h4>
+                            <p>予定やタスクのリマインドを自動通知します。</p>
+                        </div>
+                        <div>
+                            <h4>共有機能</h4>
+                            <p>他のユーザーと予定やタスクを共有できます（任意）。</p>
+                        </div>
+                        <div>
+                            <h4>クロスプラットフォーム</h4>
+                            <p>ウェブ、モバイル（iOS/Android）で利用可能です。</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>技術要素</h3>
+                    <div class="tech-stack-grid">
+                        <div>
+                            <h4>バックエンド</h4>
+                            <p>Node.js (Express) / Python (FastAPI)</p>
+                        </div>
+                        <div>
+                            <h4>データベース</h4>
+                            <p>MongoDB / Firestore</p>
+                        </div>
+                        <div>
+                            <h4>フロントエンド (Web)</h4>
+                            <p>HTML, CSS, JavaScript (React / Next.js)</p>
+                        </div>
+                        <div>
+                            <h4>フロントエンド (Mobile)</h4>
+                            <p>React Native / Flutter</p>
+                        </div>
+                        <div>
+                            <h4>認証</h4>
+                            <p>Firebase Auth / Auth0</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h2>3. インフラ監視・管理システム</h2>
+                    <img src="https://via.placeholder.com/100x100?text=Monitor" alt="監視アイコン" class="project-icon">
+                    <p>ITインフラの安定稼働を支え、問題の早期発見と対応を自動化・効率化します。</p>
+                </section>
+                <section>
+                    <h3>主要機能</h3>
+                    <div class="features-grid">
+                        <div>
+                            <h4>サーバー稼働監視</h4>
+                            <p>CPU、メモリ、ディスク使用率などをリアルタイムで監視します。</p>
+                        </div>
+                        <div>
+                            <h4>ログ収集・分析</h4>
+                            <p>サーバーやアプリログを一元管理し、異常を検知します。</p>
+                        </div>
+                        <div>
+                            <h4>アラート通知</h4>
+                            <p>異常発生時、メールやSlackへ自動通知します。</p>
+                        </div>
+                        <div>
+                            <h4>リソース管理</h4>
+                            <p>仮想マシンやコンテナのリソース利用を可視化します。</p>
+                        </div>
+                        <div>
+                            <h4>デプロイ自動化</h4>
+                            <p>アプリケーションのデプロイプロセスを自動化します。</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>技術要素</h3>
+                    <div class="tech-stack-grid">
+                        <div>
+                            <h4>言語</h4>
+                            <p>Python / Go</p>
+                        </div>
+                        <div>
+                            <h4>監視ツール</h4>
+                            <p>Prometheus, Grafana, Zabbix</p>
+                        </div>
+                        <div>
+                            <h4>ログ管理</h4>
+                            <p>ELK Stack (Elasticsearch, Logstash, Kibana)</p>
+                        </div>
+                        <div>
+                            <h4>コンテナ技術</h4>
+                            <p>Docker, Kubernetes</p>
+                        </div>
+                        <div>
+                            <h4>構成管理</h4>
+                            <p>Ansible / Terraform</p>
+                        </div>
+                        <div>
+                            <h4>クラウド</h4>
+                            <p>AWS / GCP / Azure (Monitoring, Logging)</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <h2>まとめ</h2>
+                <p>これらのプロジェクトを通じて、私たちは以下の目標を達成します。</p>
+                <ul>
+                    <li>**実践的な開発スキル**: バックエンド、フロントエンド、インフラまで一貫した開発経験</li>
+                    <li>**課題解決能力**: 現実世界の課題に対するシステムソリューションの提案と実装</li>
+                    <li>**最新技術の習得**: 各分野で広く使われる技術やフレームワークの深い理解</li>
+                    <li>**チーム開発の経験**: Git/GitHubを活用した協調開発（チーム制作の場合）</li>
+                </ul>
+                <p>これらのシステム開発が、私たちの卒業制作の集大成となることを目指します。</p>
+            </section>
+
+            <section>
+                <h1>質疑応答</h1>
+                <p>ご清聴いただきありがとうございました。</p>
+                <p>ご質問がございましたら、お気軽にお尋ねください。</p>
+            </section>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'slow',
+            controls: true,
+            progress: true,
+            center: true,
+            // 垂直方向のスライドも有効にする設定
+            // これはネストされたセクション（<section><section>...</section></section>）で利用されます
+            // この場合、各プロジェクトの詳細スライドが垂直方向、プロジェクト自体が水平方向になります
+            // default: true
+            // verticalEnabled: true, 
+        });
+    </script>
 </body>
-
 </html>
