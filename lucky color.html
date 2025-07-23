@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日のラッキーカラー占い - 毎日を彩る幸運の色</title>
+    <meta name="description" content="今日のラッキーカラーを毎日お届け！あなたの運気を高める色を見つけて、ポジティブな一日を始めましょう。">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+        :root {
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f4f7f6;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --border-radius: 15px;
+            --card-padding: 25px;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #e0f2f7 0%, #ffebee 100%); /* 明るいグラデーション */
+            animation: backgroundAnimation 15s ease infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px var(--shadow-light);
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            color: #333;
+            margin: 0;
+            padding: 0 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 20px var(--shadow-light);
+            padding: var(--card-padding);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .date-display {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: #777;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .lucky-color-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .color-box {
+            width: clamp(150px, 40vw, 250px);
+            height: clamp(150px, 40vw, 250px);
+            border-radius: 50%;
+            background-color: #ccc; /* Placeholder */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            transition: background-color 1s ease-in-out, transform 0.5s ease;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+            100% { transform: scale(1.03); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+        }
+
+        .color-name {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: clamp(2rem, 8vw, 4rem);
+            color: var(--text-light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            z-index: 2; /* Ensure text is above any potential background effects */
+        }
+
+        .color-description {
+            font-size: clamp(1rem, 3vw, 1.15rem);
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .advice-section h2 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            color: #4CAF50; /* Positive green */
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .advice-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .card:hover .advice-section h2::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .advice-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .advice-list li {
+            background-color: #e8f5e9; /* Light green background */
+            border-left: 5px solid #81C784; /* Green border */
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            color: #388E3C;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+        }
+
+        .advice-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .advice-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .share-section {
+            margin-top: 30px;
+        }
+
+        .share-section p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .share-buttons button {
+            background-color: #42b72a; /* Facebook like green */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 5px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .share-buttons button:hover {
+            background-color: #36a420;
+            transform: translateY(-2px);
+        }
+
+        .share-buttons .twitter {
+            background-color: #1DA1F2; /* Twitter blue */
+        }
+        .share-buttons .twitter:hover {
+            background-color: #0d8ddb;
+        }
+
+        .share-buttons .line {
+            background-color: #00C300; /* LINE green */
+        }
+        .share-buttons .line:hover {
+            background-color: #00a800;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            background-color: #ffffff;
+            box-shadow: 0 -4px 10px var(--shadow-light);
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 0;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .card {
+                padding: 20px;
+                margin: 15px;
+            }
+            .color-box {
+                width: 180px;
+                height: 180px;
+            }
+            .color-name {
+                font-size: 3rem;
+            }
+            .color-description {
+                font-size: 1rem;
+            }
+            .advice-list li {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+            .share-buttons button {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .card {
+                padding: 15px;
+                margin: 10px;
+            }
+            .color-box {
+                width: 150px;
+                height: 150px;
+            }
+            .color-name {
+                font-size: 2.5rem;
+            }
+            .color-description {
+                font-size: 0.9rem;
+            }
+            .advice-section h2 {
+                font-size: 1.2rem;
+            }
+            .advice-list li {
+                font-size: 0.85rem;
+            }
+            .share-buttons button {
+                width: calc(50% - 10px);
+                margin: 5px 2px;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>今日のラッキーカラー占い</h1>
+    </header>
+
+    <main>
+        <div class="card">
+            <p class="date-display" id="currentDate"></p>
+
+            <div class="lucky-color-section">
+                <div class="color-box" id="colorBox">
+                    <span class="color-name" id="colorName"></span>
+                </div>
+                <p class="color-description" id="colorDescription"></p>
+            </div>
+
+            <div class="advice-section">
+                <h2>🍀 今日の幸運を呼ぶアクション</h2>
+                <ul class="advice-list" id="adviceList">
+                    </ul>
+            </div>
+
+            <div class="share-section">
+                <p>今日のラッキーカラーを友達にもシェアしよう！</p>
+                <div class="share-buttons">
+                    <button class="twitter" onclick="shareTwitter()">X (旧Twitter)でシェア</button>
+                    <button class="line" onclick="shareLine()">LINEでシェア</button>
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 今日のラッキーカラー占い. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateDisplay = document.getElementById('currentDate');
+            const colorBox = document.getElementById('colorBox');
+            const colorName = document.getElementById('colorName');
+            const colorDescription = document.getElementById('colorDescription');
+            const adviceList = document.getElementById('adviceList');
+
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+
+            // 日付表示
+            dateDisplay.textContent = `${year}年${month}月${day}日`;
+
+            // ラッキーカラーの定義（簡易的なもの、日によって変わるロジックは後述）
+            // 実際にはもっと複雑なロジックや、日替わりデータを用いることが可能
+            const colors = [
+                { name: "レッド", hex: "#FF6347", desc: "情熱とエネルギーに満ちた一日を！積極的な行動が幸運を呼びます。", advice: ["新しいことにチャレンジする", "運動で体を動かす", "リーダーシップを発揮する"] },
+                { name: "ブルー", hex: "#4682B4", desc: "冷静さと集中力が高まる日。落ち着いて物事に取り組みましょう。", advice: ["じっくり考える時間を作る", "計画を立てて実行する", "信頼できる人と会話する"] },
+                { name: "イエロー", hex: "#FFD700", desc: "明るく楽しい一日が待っています！コミュニケーションを大切に。", advice: ["笑顔で人と接する", "新しい知識を学ぶ", "好奇心を持って行動する"] },
+                { name: "グリーン", hex: "#6B8E23", desc: "癒やしと成長の運気。心穏やかに過ごし、バランスを整えましょう。", advice: ["自然に触れる時間を取る", "健康的な食事を心がける", "人間関係を育む"] },
+                { name: "ピンク", hex: "#FFB6C1", desc: "愛情運が高まる日。優しさを大切にし、周囲に感謝を伝えましょう。", advice: ["親しい人に連絡を取る", "自分を労わる時間を作る", "感謝の気持ちを伝える"] },
+                { name: "パープル", hex: "#8A2BE2", desc: "創造性と直感力が冴える日。インスピレーションを大切に。", advice: ["アートや音楽に触れる", "直感を信じて行動する", "瞑想や内省をする"] },
+                { name: "オレンジ", hex: "#FFA500", desc: "活気と社交性がアップ！新しい出会いや交流を楽しんで。", advice: ["イベントに参加する", "積極的に交流を図る", "ポジティブな言葉を使う"] },
+                { name: "ホワイト", hex: "#F8F8FF", desc: "清らかさとスタートの日。心をリセットし、新たな気持ちで。", advice: ["身の回りを整理整頓する", "新しい目標を立てる", "リラックスする時間を作る"] },
+                { name: "ブラック", hex: "#36454F", desc: "自己確立と決断の日。落ち着いて、自分と向き合いましょう。", advice: ["集中して作業に取り組む", "決断を保留せず行う", "休息をしっかりとる"] },
+                { name: "ゴールド", hex: "#FFD700", desc: "豊かさと成功の象徴。目標達成に向けて邁進する日。", advice: ["具体的な目標設定をする", "努力を惜しまない", "自信を持って行動する"] }
+            ];
+
+            // 日付に基づく簡易的なラッキーカラー決定ロジック
+            // ここでは日を基に、colors配列から一つ選ぶ
+            const todayIndex = day % colors.length; // 日をcolors配列の長で割った余り
+            const luckyColor = colors[todayIndex];
+
+            // サイトの要素に色と情報を適用
+            colorBox.style.backgroundColor = luckyColor.hex;
+            colorName.textContent = luckyColor.name;
+            colorDescription.textContent = luckyColor.desc;
+
+            // アドバイスリストの生成
+            adviceList.innerHTML = ''; // クリア
+            luckyColor.advice.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                adviceList.appendChild(li);
+            });
+
+            // シェア機能
+            const shareText = `今日のラッキーカラーは【${luckyColor.name}】！\n${luckyColor.desc}\n#今日のラッキーカラー占い #ラッキーカラー`;
+            const pageUrl = window.location.href;
+
+            window.shareTwitter = () => {
+                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}`, '_blank');
+            };
+
+            window.shareLine = () => {
+                window.open(`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`, '_blank');
+            };
+
+            // Facebookシェアはボタンを非表示にしています。必要であれば有効化してください。
+            // window.shareFacebook = () => {
+            //     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(shareText)}`, '_blank');
+            // };
+        });
+    </script>
+</body>
+</html>
