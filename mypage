@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>My Portfolio</h1>
+  <p>作品紹介サイト</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="about">
+  <h2>About</h2>
+  <p>
+    ここに自己紹介を書きます。<br>
+    制作しているジャンルや、得意なことなどを簡単に紹介しましょう。
+  </p>
+</section>
+
+<section id="works">
+  <h2>Works</h2>
+
+  <div class="work">
+    <img src="https://via.placeholder.com/300x200" alt="作品1">
+    <h3>作品タイトル1</h3>
+    <p>作品の説明を書きます。</p>
+  </div>
+
+  <div class="work">
+    <img src="https://via.placeholder.com/300x200" alt="作品2">
+    <h3>作品タイトル2</h3>
+    <p>作品の説明を書きます。</p>
+  </div>
+
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    メール: example@email.com<br>
+    X / Instagram / GitHub などのリンクを書いてもOK
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2026 Your Name</p>
+</footer>
+
+</body>
+</html>
