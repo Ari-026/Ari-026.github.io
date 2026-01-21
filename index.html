@@ -2,60 +2,152 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <title>あなたの名前 | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="あなたのポートフォリオサイト">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>My Portfolio</h1>
-  <p>作品紹介サイト</p>
-</header>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">あなたの名前</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#works">Works</a>
+        <a href="#skills">Skills</a>
+        <a href="#qa">Q&A</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#works">Works</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hi, I'm あなたの名前</h1>
+      <p class="subtitle">Web Designer / Frontend Developer</p>
+      <p class="description">
+        海外ガール風のデザインが大好きなWebクリエイター。  
+        パステルカラー・Y2K・ガーリー系の世界観を得意としています。  
+        「かわいい × 見やすい × 伝わる」デザインを心がけています。
+      </p>
+    </div>
+  </section>
 
-<section id="about">
-  <h2>About</h2>
-  <p>
-    ここに自己紹介を書きます。<br>
-    制作しているジャンルや、得意なことなどを簡単に紹介しましょう。
-  </p>
-</section>
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Webデザインとフロントエンド開発を中心に活動しています。  
+        特に、海外ガール風・韓国っぽ・Y2Kデザインが得意で、  
+        見た瞬間に「かわいい！」と思ってもらえる世界観づくりが好きです。
+      </p>
+      <p>
+        趣味はカフェ巡り、写真加工、Pinterestでデザイン収集。  
+        かわいいものに囲まれていると幸せです。
+      </p>
+    </div>
+  </section>
 
-<section id="works">
-  <h2>Works</h2>
+  <!-- Services -->
+  <section id="services" class="section section-gray">
+    <div class="container">
+      <h2>What I Can Do</h2>
+      <div class="services-grid">
 
-  <div class="work">
-    <img src="https://via.placeholder.com/300x200" alt="作品1">
-    <h3>作品タイトル1</h3>
-    <p>作品の説明を書きます。</p>
-  </div>
+        <div class="service-card">
+          <h3>Web Design</h3>
+          <p>海外ガール風・韓国っぽ・Y2Kなど、世界観のあるデザインが得意です。</p>
+        </div>
 
-  <div class="work">
-    <img src="https://via.placeholder.com/300x200" alt="作品2">
-    <h3>作品タイトル2</h3>
-    <p>作品の説明を書きます。</p>
-  </div>
+        <div class="service-card">
+          <h3>Coding</h3>
+          <p>HTML / CSS / JavaScript を使ったコーディングができます。</p>
+        </div>
 
-</section>
+        <div class="service-card">
+          <h3>Branding</h3>
+          <p>ロゴ・カラー設計・雰囲気づくりなど、ブランド全体の世界観を統一します。</p>
+        </div>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    メール: example@email.com<br>
-    X / Instagram / GitHub などのリンクを書いてもOK
-  </p>
-</section>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2026 Your Name</p>
-</footer>
+  <!-- Works -->
+  <section id="works" class="section">
+    <div class="container">
+      <h2>Works</h2>
+      <div class="works-grid">
 
-</body>
-</html>
+        <div class="work-card">
+          <img src="https://placehold.jp/300x200.png" alt="作品1" class="work-img">
+          <h3>作品タイトル1</h3>
+          <p>海外ガール風のLPデザイン。パステルカラーとグラデーションを使用。</p>
+          <p class="meta">使用技術：HTML / CSS / JavaScript</p>
+        </div>
+
+        <div class="work-card">
+          <img src="https://placehold.jp/300x200.png" alt="作品2" class="work-img">
+          <h3>作品タイトル2</h3>
+          <p>韓国っぽアプリUIデザイン。丸みのあるUIと淡色カラーがポイント。</p>
+          <p class="meta">使用技術：Figma / React</p>
+        </div>
+
+        <div class="work-card">
+          <img src="https://placehold.jp/300x200.png" alt="作品3" class="work-img">
+          <h3>作品タイトル3</h3>
+          <p>個人ブログのデザイン＆構築。読みやすさとかわいさを両立。</p>
+          <p class="meta">使用技術：Next.js / Tailwind CSS</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section section-gray">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li><strong>HTML / CSS：</strong>★★★★★</li>
+        <li><strong>JavaScript：</strong>★★★★☆</li>
+        <li><strong>React：</strong>★★★☆☆</li>
+        <li><strong>Figma：</strong>★★★★★</li>
+        <li><strong>Photoshop：</strong>★★★★☆</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Q&A -->
+  <section id="qa" class="section">
+    <div class="container">
+      <h2>Q&A</h2>
+      <div class="qa-box">
+        <h3>Q. どんなデザインが得意ですか？</h3>
+        <p>A. 海外ガール風・韓国っぽ・Y2Kなど、かわいい系の世界観が得意です。</p>
+      </div>
+
+      <div class="qa-box">
+        <h3>Q. コーディングもできますか？</h3>
+        <p>A. はい。HTML / CSS / JavaScript を中心に対応できます。</p>
+      </div>
+
+      <div class="qa-box">
+        <h3>Q. 依頼はどこからできますか？</h3>
+        <p>A. 下の Contact からメールでご連絡ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section-gray">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>お仕事のご相談やお問い合わせは以下からどうぞ。</p>
+      <p><a href="mailto:yourmail@example.com" class="btn">
+        
