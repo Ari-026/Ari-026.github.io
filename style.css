@@ -105,7 +105,7 @@ a:hover {
 
 .work-img {
   width: 100%;          /* カードの幅に合わせる */
-  aspect-ratio: 3 / 10;  /* 画像の縦横比を固定（横長） */
+  aspect-ratio: 3 / 7;  /* 画像の縦横比を固定（横長） */
   object-fit: cover;    /* 枠に合わせてトリミング */
   border-radius: 8px;
 }
