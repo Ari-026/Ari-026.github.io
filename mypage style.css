@@ -1,79 +1,179 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
-  line-height: 1.6;
-  background-color: #f6f2ff; /* 薄い紫 */
-  color: #444;
+  font-family: "Helvetica Neue", system-ui, sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #dff3ff, #ffe6f7, #f3e8ff);
+  background-attachment: fixed;
+  line-height: 1.7;
 }
 
-header {
-  background: linear-gradient(135deg, #7fd7ff, #d6a4ff); /* 水色 → 紫 */
-  color: #fff;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-nav {
-  background-color: #ffb6d9; /* ピンク */
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-nav li {
-  margin: 0 15px;
-}
-
-nav a {
-  color: #fff;
+a {
+  color: #ff7ad9;
   text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 20px;
 }
 
-nav a:hover {
-  background-color: #cfa8ff; /* 紫 */
+a:hover {
+  opacity: 0.8;
 }
 
-section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 30px auto;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
 }
 
-h2 {
-  color: #b36bff; /* 紫 */
-  border-left: 6px solid #7fd7ff; /* 水色 */
-  padding-left: 10px;
+/* Header */
+.header {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #f7cfff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.work {
-  margin-top: 30px;
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
 }
 
-.work h3 {
-  color: #ff7fbf; /* ピンク */
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #b35cff;
 }
 
-.work img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 3px solid #e0cfff; /* 薄紫 */
+.nav a {
+  margin-left: 16px;
+  font-weight: 500;
+  color: #ff7ad9;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #ffb6d9, #7fd7ff); /* ピンク → 水色 */
+/* Hero */
+.hero {
+  padding: 80px 0 60px;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #7ddfff, #ff9ce6, #c79bff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #b35cff;
+}
+
+.description {
+  margin-top: 12px;
+  color: #555;
+}
+
+/* Sections */
+.section {
+  padding: 60px 0;
+}
+
+.section-gray {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: #b35cff;
+}
+
+/* Works */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.work-card {
+  background: #ffffffcc;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 182, 255, 0.3);
+  border: 2px solid #ffd6f5;
+}
+
+.work-card h3 {
+  margin-top: 0;
+  color: #ff7ad9;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+/* Skills */
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Contact */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: linear-gradient(90deg, #7ddfff, #ff9ce6, #c79bff);
   color: #fff;
-  margin-top: 40px;
+  border-radius: 999px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 182, 255, 0.4);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.sns a {
+  margin: 0 4px;
+  color: #b35cff;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px 0 30px;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    margin-top: 8px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
 }
